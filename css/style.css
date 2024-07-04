@@ -1,0 +1,184 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+:root {
+  --clr-primary-red: hsl(0, 100%, 74%);
+  --clr-primary-green: hsl(154, 59%, 51%);
+  --clr-accent-blue: hsl(248, 32%, 49%);
+  --clr-neutral-dark-blue: hsl(249, 10%, 26%);
+  --clr-neutral-grayish-blue: hsl(246, 25%, 77%);
+
+  --fs-body: 16px;
+
+  --ff-poppins: "Poppins", sans-serif;
+  --fw-normal: 400;
+  --fw-semi-bold: 500;
+  --fw-bold: 600;
+  --fw-extra-bold: 700;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.hero img,
+picture {
+  display: block;
+  width: 100%;
+  object-fit: cover;
+}
+
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow-wrap: break-word;
+}
+
+body {
+  display: grid;
+  justify-content: center;
+  height: 100vh;
+  padding-inline: 15px;
+  padding-block: 35px;
+  background: url("../images/bg-intro-mobile.png"), center, no-repeat;
+  background-size: cover;
+  background-color: var(--clr-primary-red);
+  color: white;
+  font-size: var(--fs-body);
+  font-family: var(--ff-poppins);
+}
+
+.main {
+  text-align: center;
+
+  & h1 {
+    padding-inline: 30px;
+  }
+
+  & p {
+    margin-block-start: 20px;
+    padding-inline: 10px;
+  }
+}
+
+.secondary {
+  margin-block: 35px;
+
+  & .trial {
+    text-align: center;
+    background: var(--clr-accent-blue);
+    color: var(--clr-neutral-grayish-blue);
+    padding-block: 10px;
+    padding-inline: 60px;
+    border-radius: 8px;
+    box-shadow: 0px 10px 5px 0px rgba(0, 0, 0, 0.25);
+
+    & span {
+      color: white;
+      font-weight: var(--fw-bold);
+    }
+  }
+
+  & .card {
+    margin-block-start: 20px;
+    background: white;
+    display: grid;
+    gap: 15px;
+    padding: 15px;
+    border-radius: 10px;
+
+    & form {
+      display: grid;
+      gap: 10px;
+    }
+
+    & input {
+      border: 1px solid var(--clr-neutral-grayish-blue);
+      padding: 12px 18px;
+      border-radius: 5px;
+
+      &::placeholder {
+        color: var(--clr-neutral-dark-blue);
+        font-weight: var(--fw-bold);
+      }
+    }
+
+    & button {
+      border: none;
+      padding: 15px 20px;
+      border-radius: 8px;
+      background: var(--clr-primary-green);
+      text-transform: uppercase;
+      color: white;
+      font-weight: var(--fw-semi-bold);
+      box-shadow: 0px 5px 5px 0px hsl(154deg 49.42% 34%);
+
+      &:hover {
+        cursor: pointer;
+      }
+    }
+
+    & p {
+      text-align: center;
+      color: var(--clr-neutral-grayish-blue);
+      font-size: 13px;
+      padding-inline: 10px;
+
+      & span {
+        color: var(--clr-primary-red);
+        font-weight: var(--fw-bold);
+      }
+    }
+  }
+}
+
+.error-message {
+  color: red;
+  font-size: 0.8em;
+  margin-top: 5px;
+  text-align: center;
+}
+
+@media screen and (width >= 768px) {
+  body {
+    background: url("../images/bg-intro-mobile.png"), center, no-repeat;
+    background-size: cover;
+    background-color: var(--clr-primary-red);
+    place-content: center;
+  }
+
+  main {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 35px;
+    max-width: 1020px;
+  }
+
+  .main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: start;
+
+    & h1 {
+      padding-inline: 10px;
+      font-size: 40px;
+    }
+  }
+}
